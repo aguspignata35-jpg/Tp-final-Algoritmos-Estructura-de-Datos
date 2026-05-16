@@ -17,6 +17,8 @@ namespace tp1
 		
 		public T desencolar()
 		{
+			if (esVacia())
+			throw new InvalidOperationException("No se puede , la cola se encuentra vacia");
 			T temp = this.datos[0];
 			this.datos.RemoveAt(0);
 			return temp;
@@ -24,6 +26,8 @@ namespace tp1
 		
 		public T tope()
 		{
+			if(esvacia())
+			throw new InvalidOperationException("No se puede ver el tope la cola se encuentra vacia");
 			return this.datos[0];
 		}
 		
@@ -35,6 +39,14 @@ namespace tp1
 		public int cantidadElementos()
 		{
 			return this.datos.Count;
+		}
+		public void limpiar()
+		{
+			this.dato.Clear();
+		}
+		public bool contiene (T elem)
+		{
+			return this.datos.Contains(elem);
 		}
 	}
 }
